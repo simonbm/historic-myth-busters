@@ -1,10 +1,16 @@
+"use client"
+
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import BlackSecretButton from "@/components/blacksecretbutton"
+import HmbSubscribeButton from "@/components/hmbsubscribebutton"
 import { Card, CardContent } from "@/components/ui/card"
-import { Youtube, History, BookOpen } from "lucide-react"
+import { History } from "lucide-react"
 import Image from 'next/image';
 
+
 export default function LandingPage() {
+
+
   return (
     <div className="flex flex-col min-h-screen bg-[#f6f0e7]">
       <header className="px-4 lg:px-6 h-14 flex items-center">
@@ -28,7 +34,7 @@ export default function LandingPage() {
         </nav>
       </header>
       <main className="flex-1 bg-[#c98a50]">
-      <section className="relative w-full min-h-[400px] max-h-[600px] flex items-center justify-center py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="relative w-full min-h-[400px] max-h-[600px] flex items-center justify-center py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="absolute inset-0 z-0">
             <Image
               src="/12891_updated.jpg"
@@ -50,18 +56,8 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Link href="https://www.theblacksecret.co.uk/a/2147508849/MGXtzkMu" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#623431] hover:bg-[#b6896a] text-white">
-                    <BookOpen className="mr-2 h-4 w-4" />
-                    Access The Black Secret Program
-                  </Button>
-                </Link>
-                <Link href="https://www.youtube.com/@DajaMythBusters?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-red-600 hover:bg-red-700">
-                    <Youtube className="mr-2 h-4 w-4" />
-                    Subscribe
-                  </Button>
-                </Link>
+                <BlackSecretButton />
+                <HmbSubscribeButton />
               </div>
             </div>
           </div>
@@ -93,23 +89,23 @@ export default function LandingPage() {
                 }
               ].map((video, i) => (
                 <Link key={i} href={`https://www.youtube.com/watch?v=${video.videoID}`} target="_blank" rel="noopener noreferrer">
-                <Card key={i} className="bg-[#623431] transition-transform hover:scale-105 cursor-pointer">
-                  <CardContent className="p-4" >
-                    <img
-                      alt={`Featured video: ${video.title}`}
-                      className="w-full h-48 object-cover rounded-lg mb-4"
-                      height="200"
-                      src={`${video.thumbnail}`}
-                      style={{
-                        aspectRatio: "16/9",
-                        objectFit: "cover",
-                      }}
-                      width="300"
-                    />
-                    <h3 className="text-xl font-bold mb-2 text-white">{video.title}</h3>
-                    <p className="text-gray-600 text-white">{video.description}</p>
-                  </CardContent>
-                </Card>
+                  <Card key={i} className="bg-[#623431] transition-transform hover:scale-105 cursor-pointer">
+                    <CardContent className="p-4" >
+                      <img
+                        alt={`Featured video: ${video.title}`}
+                        className="w-full h-48 object-cover rounded-lg mb-4"
+                        height="200"
+                        src={`${video.thumbnail}`}
+                        style={{
+                          aspectRatio: "16/9",
+                          objectFit: "cover",
+                        }}
+                        width="300"
+                      />
+                      <h3 className="text-xl font-bold mb-2 text-white">{video.title}</h3>
+                      <p className="text-gray-600 text-white">{video.description}</p>
+                    </CardContent>
+                  </Card>
                 </Link>
               ))}
             </div>
@@ -121,14 +117,14 @@ export default function LandingPage() {
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Our Channel</h2>
                 <p className="text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                &ldquo;<b>Historic Myth Busters</b>&rdquo; is a channel dedicated to unearthing and celebrating the rich tapestry of Black history, challenging misconceptions, and empowering individuals with knowledge. Drawing inspiration from the Black Secret Education Project, this channel illuminates Africa&apos;s wonders and the global contributions of Black people.
+                  &ldquo;<b>Historic Myth Busters</b>&rdquo; is a channel dedicated to unearthing and celebrating the rich tapestry of Black history, challenging misconceptions, and empowering individuals with knowledge. Drawing inspiration from the Black Secret Education Project, this channel illuminates Africa&apos;s wonders and the global contributions of Black people.
                 </p>
                 <ul className="text-black list-disc list-inside space-y-2 mt-4">
-                    <li>Uncover hidden historical truths: Explore lesser-known aspects of Black history and bring them to light.</li>
-                    <li>Challenge common misconceptions: Address and debunk myths and stereotypes about Black history and culture.</li>
-                    <li>Celebrate Black achievements: Highlight the significant contributions of Black individuals throughout history.</li>
-                    <li>Educate and empower viewers: Provide accurate, well-researched information to inspire and inform our audience.</li>
-                    <li>Promote cultural understanding: Foster appreciation for the diversity and richness of Black heritage worldwide.</li>
+                  <li>Uncover hidden historical truths: Explore lesser-known aspects of Black history and bring them to light.</li>
+                  <li>Challenge common misconceptions: Address and debunk myths and stereotypes about Black history and culture.</li>
+                  <li>Celebrate Black achievements: Highlight the significant contributions of Black individuals throughout history.</li>
+                  <li>Educate and empower viewers: Provide accurate, well-researched information to inspire and inform our audience.</li>
+                  <li>Promote cultural understanding: Foster appreciation for the diversity and richness of Black heritage worldwide.</li>
                 </ul>
               </div>
               <div className="flex justify-center">
@@ -159,12 +155,7 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <Link href="https://www.theblacksecret.co.uk/a/2147508849/MGXtzkMu" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-yellow-600 hover:bg-yellow-700 text-black">
-                    <BookOpen className="mr-2 h-4 w-4" />
-                    Access The Black Secret Program
-                  </Button>
-                </Link>
+                <BlackSecretButton />
               </div>
             </div>
           </div>
@@ -181,12 +172,7 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <Link href="https://www.youtube.com/@DajaMythBusters?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-red-600 hover:bg-red-700">
-                    <Youtube className="mr-2 h-4 w-4" />
-                    Subscribe on YouTube
-                  </Button>
-                </Link>
+                <HmbSubscribeButton />
               </div>
             </div>
           </div>
