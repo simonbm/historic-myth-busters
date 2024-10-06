@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Youtube, History, BookOpen } from "lucide-react"
+import Image from 'next/image';
 
 export default function LandingPage() {
   return (
@@ -27,14 +28,24 @@ export default function LandingPage() {
         </nav>
       </header>
       <main className="flex-1 bg-[#c98a50]">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[f6f0e7] text-black">
-          <div className="container px-4 md:px-6">
+      <section className="relative w-full min-h-[400px] max-h-[600px] flex items-center justify-center py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/12891_updated.jpg"
+              alt="Historic background"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-60" />
+          </div>
+          <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
                   Historic Myth Busters
                 </h1>
-                <p className="mx-auto max-w-[700px] text-white  md:text-x1">
+                <p className="mx-auto max-w-[700px] text-white md:text-x1">
                   Unraveling history&apos;s greatest mysteries and debunking myths one video at a time. <br />Powered by the Black Secret
                 </p>
               </div>
@@ -55,12 +66,12 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-        <section id="featured" className="w-full py-12 md:py-24 lg:py-32 bg-[#f6f0e7]">
-          <div className="container px-4 md:px-6">
+        <section id="featured" className="w-full py-12 md:py-24 lg:py-32 bg-[#f6f0e7]  flex items-center justify-center">
+          <div className="container px-4 md:px-6 justify-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
               Featured Videos
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
               {[
                 {
                   title: "Songhai Empire",
@@ -70,7 +81,7 @@ export default function LandingPage() {
                 },
                 {
                   title: "Benin City's 10,000 Mile Wal",
-                  description: "Discover the incredible story of Benin City, a medieval African marvel...",
+                  description: "Discover the incredible story of Benin City, a ..",
                   thumbnail: "/a-youtube-video-cover-with-the-text-history-myth-b-zAd5Nx2sTpG1PadvsO8tgg-BORmhD5-Tn-popEvA2w_aA.png",
                   videoID: "QPQaG1fKhHA&"
                 },
@@ -104,7 +115,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-[#b6896a]">
+        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-[#b6896a]  flex items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="space-y-4">
@@ -136,7 +147,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-        <section id="black-secret" className="w-full py-12 md:py-24 lg:py-32 bg-[#f6f0e7] text-white">
+        <section id="black-secret" className="w-full py-12 md:py-24 lg:py-32 bg-[#f6f0e7] text-white flex items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
@@ -158,7 +169,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-        <section id="subscribe" className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+        <section id="subscribe" className="w-full py-12 md:py-24 lg:py-32 bg-black text-white flex items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
